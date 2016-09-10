@@ -13,7 +13,7 @@ System.out.println("enter the array in ascending order:");
 a[i]=sc.nextInt();
  System.out.println("Array elements are : ");
         for (j=0;j<aa.length;j++)
-            System.out.println(a[j]);
+            System.out.println(aa[j]);
 System.out.println("enter any number from the array:");
 int n=sc.nextInt();
 
