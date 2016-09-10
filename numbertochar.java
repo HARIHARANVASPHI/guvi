@@ -1,52 +1,53 @@
 import java.util.*;
 
-class numbertochar {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int inp = sc.nextInt();
-		possibleString(inp);
-	}
+public class unter5 {
+	public static void main(String [] args) {
 
-	public static void possibleString(int input) {
-		String inp = "" + input;
-		int len = inp.length();
-		String ans = "";
-		for (int i = 0; i < len; i++) {
-			ans += (char) (Integer.parseInt(inp.substring(i, i + 1)) + 96);
-		}
-		System.out.println(ans);
-		for (int i = 0; i < len - 1; i++) {
-			ans = "";
-			for (int j = 0; j < i; j++) {
-				ans += (char) (Integer.parseInt(inp.substring(j, j + 1)) + 96);
+		String []oo={"","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		String A="1",B="2",C="3",D="4",E="5",F="6",G="7",H="8",I="9",J="10",K="11",L="12",M="13",N="14",O="15",P="16",Q="17",R="18",S="19",T="20",U="21",V="22",W="23",X="24",Y="25",Z="26";
+	System.out.println("Enter the no");
+	int z;
+	Scanner sc=new Scanner(System.in);
+	z=sc.nextInt();
+	int count=0;
+	String n=String.valueOf(z);
+	String ss[]=new String[100];
+	int k=0;String s1;
+	ss[k]="";
+	for(int i=0;i<=n.length()-1;i++){
+	 		 s1=n.substring(i,i+1);
+			 int i1=Integer.parseInt(s1);
+				ss[k]+=oo[i1];
+		}  System.out.println(ss[k]);
+		k++;	count++;ss[k]="";
+	for(int i=0;i<=n.length()-2;i++){
+	 s1=n.substring(i, i+2); 
+	 
+			int i1=Integer.parseInt(s1);
+			if(i1>26){
+				  i1=i1-26;
 			}
-			int x = Integer.parseInt(inp.substring(i, i + 2));
-			if (x <= 26) {
-				ans += (char) (x + 96);
-			} else {
-				continue;
+			 
+			ss[k]+=oo[i1];
+			for(int p=i+2;p<=n.length()-1;p++)
+			{  String s2=n.substring(p,p+1);
+			int p1=Integer.parseInt(s2);
+			
+				 ss[k]+=oo[p1]+"";			
 			}
-			for (int j = i + 2; j < len; j++) {
-				ans += (char) (Integer.parseInt(inp.substring(j, j + 1)) + 96);
-			}
-			System.out.println(ans);
-		}
-		ans = "";
-		for (int i = 0; i < len;) {
-			if (i + 1 < len) {
-				int x = Integer.parseInt(inp.substring(i, i + 2));
-				if (x <= 26) {
-					ans += (char) (x + 96);
-					i += 2;
-				} else {
-					ans += (char) (Integer.parseInt(inp.substring(i, i + 1)) + 96);
-					i++;
-				}
-			} else {
-				ans += (char) (Integer.parseInt(inp.substring(i, i + 1)) + 96);
-				i++;
-			}
-		}
-		System.out.println(ans);
-	}
+			if(i==n.length()-1){
+				for(int i11=0;i11<=n.length()-2;i11++){
+			 		 s1=n.substring(i11,i11+1);
+					 int i21=Integer.parseInt(s1);
+						ss[k]+=oo[i21];
+						
+				}  			}  
+			System.out.println(ss[k]);
+			count++;	k++;ss[k]=""; 
+			}System.out.print("count= "+k);
+	 
+ 
+
+	 
 }
+	}
